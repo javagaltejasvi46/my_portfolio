@@ -18,6 +18,24 @@ npm run build
 npx tsc --noEmit
 ```
 
+## Deploy to Render.com
+
+This project includes a native `render.yaml` blueprint for 1-click deployment on Render:
+
+1. Push your changes to your GitHub repository (ensure images in `public/projects/` and `public/resume/` are included).
+2. Log in to [render.com](https://render.com) and click **New +** → **Blueprint**.
+3. Connect your GitHub repository (`javagaltejasvi46/my_portfolio`).
+4. Render will automatically detect `render.yaml` and configure:
+   - **Environment**: Node.js (v22)
+   - **Build Command**: `npm install && npm run build`
+   - **Start Command**: `npm start`
+5. Click **Apply** to deploy!
+
+*Alternatively*, you can create a **Web Service** manually on Render:
+- **Build Command**: `npm install && npm run build`
+- **Start Command**: `npm start`
+- **Environment Variable**: `NODE_VERSION` = `22`
+
 ## Deploy to Vercel
 
 Push this folder to a Git repository, import it in Vercel, and use the default Next.js settings. Set `NEXT_PUBLIC_SITE_URL` to the deployed site URL (see `.env.example`) for canonical metadata and sitemap URLs.
